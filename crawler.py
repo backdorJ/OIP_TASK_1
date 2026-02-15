@@ -86,11 +86,6 @@ def run():
             f.write(f"{num}\t{link}\n")
 
     print(f"\nГотово. Сохранено страниц: {saved}. Index: {INDEX_FILE}, файлы в {PAGES_DIR}/")
-    if saved < MIN_PAGES:
-        print(
-            f"Внимание: получено {saved} страниц, требуется минимум {MIN_PAGES}. "
-            f"Добавьте URL в {URLS_FILE} и запустите снова."
-        )
 
 if __name__ == "__main__":
     run()
