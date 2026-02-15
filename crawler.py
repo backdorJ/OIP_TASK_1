@@ -5,7 +5,6 @@
 - Создаётся index.txt: номер файла и ссылка на страницу.
 """
 import os
-import re
 import time
 import urllib.error
 import urllib.parse
@@ -73,9 +72,11 @@ def run():
         file_index += 1
         path = os.path.join(PAGES_DIR, safe_filename(file_index))
 
+        # сюда по path записываем html
         with open(path, "w", encoding="utf-8", errors="replace") as f:
             f.write(body)
 
+        # сохраняем индекс файла и ссылку страницы
         index_entries.append((file_index, url))
         saved += 1
         print(f"[{saved}] Сохранено: {file_index}.txt — {url[:60]}...")
